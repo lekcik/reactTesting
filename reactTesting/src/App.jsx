@@ -1,8 +1,10 @@
-import Header from './Header'
+import Card from './components/Card'
 
 function App() {
     return (
-      <Header></Header>
+      <>
+        <Card />
+      </>
     );
 }
 
