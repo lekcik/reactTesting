@@ -1,12 +1,11 @@
-import cardIcon from '../assets/cardIconDev.png'
 import '../css/Card.css'
 
-function Card() {
+function Card(props) {
     return (
         <section className="card">
-            <img src={cardIcon} alt="Card Icon" />
-            <h2>Vladyslav</h2>
-            <p>Web Solutions Architect, frontend developer, React engineer</p>
+            <img src={props.iconUrl} alt="Card Icon" />
+            <h2>{props.name}</h2>
+            <p>{props.description}</p>
         </section>
     );
 }
