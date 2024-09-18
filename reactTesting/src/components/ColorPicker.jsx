@@ -5,7 +5,7 @@ function ColorPicker() {
     let [color, colorChange] = useState('#FFFFFF')
 
     function colorChangeHandler(event) {
-        colorChange(prevColor => color = event.target.value);
+        colorChange(event.target.value);
     }
 
     return(
