@@ -1,9 +1,9 @@
-import Counter from './components/Counter.jsx'
+import Radio from './components/Radio.jsx'
 
 function App() {
     return (
       <>
-        <Counter />
+        <Radio />
       </>
     );
 }
