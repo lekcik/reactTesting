@@ -11,8 +11,20 @@ section.planCard {
     box-sizing: border-box;
     border: 0.01rem solid rgba(0, 0, 0, 0.217);
     padding: 0.5rem;
+    border-radius: 0.6rem;
+
+    color: rgb(9, 9, 9);
+    background-color: rgb(255, 246, 246);
+
+    transition: all 0.3s;
 }
 
 section.planCard h2 {
     margin-bottom: 0;
+}
+
+section.planCard[aria-checked="checked"] {
+    color: rgb(255, 246, 246);
+    background-color: rgb(9, 9, 9);
+    border: 0.01rem solid rgba(255, 255, 255, 0.217);
 }

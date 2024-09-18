@@ -1,1 +1,8 @@
-section.radioContainer input{}
+section.radioContainer input {
+    display: none;
+}
+
+section.radioContainer label {
+    margin: 0.5rem;
+    cursor: pointer;
+}
