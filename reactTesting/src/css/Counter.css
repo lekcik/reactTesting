@@ -1,0 +1,47 @@
+section.counter {
+    width: 200px;
+    height: 200px;
+    margin: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid black;
+
+    position: relative;
+    z-index: 100;
+}
+
+section.counter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    
+    z-index: 110;
+
+    transform-origin: left;
+
+    animation: scale 10s ease-in-out both infinite alternate;
+}
+
+section.counter span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: red;
+
+    z-index: 120;
+}
+
+@keyframes scale {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
