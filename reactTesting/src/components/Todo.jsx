@@ -1,34 +1,35 @@
 import { useState } from "react";
 
-function ToDo() {
-    const [tasks, setTasks] = useState([]);
-    const [newTask, setNewTask] = useState('');
+function Todo() {
+    let [tasks, tasksChange] = useState([])
+    let [newTask, newTaskChange] = useState('')
+    
+    function newTaskChangeHandler(event) {
+        newTaskChange(() => event.target.value)
+    }
 
     function addTaskHandler() {
-        if (newTask.trim() === '') return;
-
-        setTasks((t) => [...t, newTask]);
-        setNewTask(''); 
+        tasksChange((t) => [...t, newTask])
+        newTaskChange('')
     }
 
     function removeTaskHandler(index) {
-        setTasks((t) => {t.filter(i !== index))})
+        tasksChange((t) => t.filter((_, i) => (i !== index)))
     }
 
-    return (
-        <>
-            <h1>Your tasks</h1>
-            <input 
-                type="text"
-                value={newTask}
-                onChange={(e) => setNewTask(e.target.value)}
-            />
+    return(
+        <section className="todo container">
+            <h1>Your tasks:</h1>
+            <input type="text" value={newTask} onChange={(e) => {newTaskChangeHandler(e)}}></input>
             <button onClick={addTaskHandler}>Add task</button>
-            <ul>
-                {tasks.map((task, index) => <li key={index}>{task} <button onClick={(index) => {removeTaskHandler(index)}}>x</button></li>)}
+            
+            <ul className="tasks">
+                {tasks.map((data, index) => (
+                    <li key={index}>{data} <button onClick={() => removeTaskHandler(index)} key={index}>x</button></li>
+                ))}
             </ul>
-        </>
+        </section>
     );
 }
 
-export default ToDo;
+export default Todo
